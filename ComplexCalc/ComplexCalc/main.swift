@@ -13,7 +13,23 @@ print("UW Complex Calculator v0.1")
 let calc = Calculator()  // Don't change this declaration name; it's used in all the tests below
 
 // ====> Add your own tests here if you wish <====
+// more operations in tulples
+let point1 = (1, 1)
+let point2 = (3, 3)
+let point3 = (-3, 3)
+let point4 = (0, 0)
+assert(calc.multiply(lhs: point1, rhs: point2) == (3, 3))
+assert(calc.multiply(lhs: point1, rhs: point3) == (-3, 3))
+assert(calc.divide(lhs: point2, rhs: point3) == (-1, 1))
+assert(calc.divide(lhs: point3, rhs: point4) == (0, 0))
 
+// more tests on dictionaries
+let pd3 = ["x": 3, "y": 3]
+let pd4 = ["x": -3, "y": 3]
+let pd5 = ["x": 0, "y": 3]
+assert(calc.multiply(lhs: pd3, rhs: pd3) == ["x": 9, "y": 9])
+assert(calc.divide(lhs: pd4, rhs: pd4) == ["x": 1, "y": 1])
+assert(calc.divide(lhs: pd3, rhs: pd5) == ["x": 0, "y": 1])
 
 // ====> Do not modify code in this section <====
 assert(calc.add(lhs: 2, rhs: 2) == 4)
